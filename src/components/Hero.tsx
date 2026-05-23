@@ -276,7 +276,7 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
             {/* Main Avatar container */}
             <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white dark:border-slate-950 shadow-2xl flex items-center justify-center bg-slate-950 preserve-3d">
               <img
-                src="/src/assets/images/tashpia_avatar_1779557140092.png"
+                src="/src/assets/images/regenerated_image_1779560804324.jpg"
                 alt="Tashpia Afroz Nijhum Avatar"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover rounded-full transform hover:scale-105 transition-transform duration-500"
