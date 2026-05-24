@@ -1,6 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Mail, Phone, Linkedin, Github, Send, AlertCircle, CheckCircle, MapPin, UserCheck, Inbox } from 'lucide-react';
+import Contact3D from './Contact3D';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -154,6 +155,24 @@ export default function Contact() {
                     Daffodil Smart City, Savar, Dhaka
                   </span>
                 </div>
+              </div>
+            </div>
+
+            {/* Holographic 3D communication node block */}
+            <div className="p-5 rounded-2xl bg-gradient-to-br from-purple-500/5 to-pink-500/5 dark:from-slate-905 dark:to-slate-950/60 border border-slate-205 dark:border-white/5 flex items-center justify-between gap-4 overflow-hidden shadow-md">
+              <div className="flex-1 text-left">
+                <span className="px-2 py-0.5 rounded bg-purple-500/10 text-purple-600 dark:text-purple-300 text-[8px] font-mono font-bold tracking-widest uppercase">
+                  Interactive Response
+                </span>
+                <h4 className="font-display font-bold text-xs sm:text-sm text-slate-800 dark:text-white mt-1.5">
+                  Contact Sphere System
+                </h4>
+                <p className="text-[10px] text-slate-550 dark:text-slate-400 font-light mt-0.5 leading-relaxed">
+                  Hover over the orbital system to interact. The main contact form above operates over secure, standard SSL channels.
+                </p>
+              </div>
+              <div className="w-24 h-24 shrink-0 flex items-center justify-center">
+                <Contact3D />
               </div>
             </div>
 

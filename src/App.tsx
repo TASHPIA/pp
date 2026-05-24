@@ -15,6 +15,7 @@ import Skills from './components/Skills';
 import Education from './components/Education';
 import CgpaChart from './components/CgpaChart';
 import Projects from './components/Projects';
+import Research from './components/Research';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -78,7 +79,7 @@ export default function App() {
   useEffect(() => {
     if (loading) return;
 
-    const sections = ['home', 'about', 'skills', 'education', 'cgpa', 'projects', 'activities', 'contact'];
+    const sections = ['home', 'about', 'skills', 'education', 'cgpa', 'projects', 'research', 'activities', 'contact'];
     
     const observers = sections.map((id) => {
       const el = document.getElementById(id);
@@ -161,6 +162,8 @@ export default function App() {
             <CgpaChart />
             
             <Projects />
+            
+            <Research />
             
             <Experience />
             

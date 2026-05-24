@@ -15,6 +15,7 @@ const NAV_ITEMS = [
   { label: 'Education', id: 'education' },
   { label: 'CGPA', id: 'cgpa' },
   { label: 'Projects', id: 'projects' },
+  { label: 'Research', id: 'research' },
   { label: 'Activities', id: 'activities' },
   { label: 'Contact', id: 'contact' },
 ];

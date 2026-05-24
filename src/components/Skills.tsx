@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Sparkles, Code2, MonitorPlay, HeartHandshake, CheckSquare } from 'lucide-react';
+import Skills3D from './Skills3D';
 
 interface Skill {
   name: string;
@@ -56,12 +57,12 @@ export default function Skills() {
             </span>
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-light leading-relaxed">
-            A breakdown of scholastic toolchains, foundational software systems, and core social interaction traits compiled across semesters.
+            A comprehensive inventory of technical tools, productivity software, and professional interpersonal skills, developed through university coursework and practical team projects.
           </p>
         </div>
 
         {/* Skills Columns Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 preserve-3d">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 preserve-3d">
           {/* Tech/Programming Column */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -74,14 +75,14 @@ export default function Skills() {
               style={{ transform: 'translateZ(30px)' }}
               className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800"
             >
-              <div className="p-2.5 rounded-xl bg-purple-500/10 text-purple-600">
+              <div className="p-2.5 rounded-xl bg-purple-500/10 text-purple-600 shrink-0">
                 <Code2 className="w-5 h-5 animate-pulse" />
               </div>
-              <div>
-                <h3 className="font-display font-bold text-base text-slate-800 dark:text-white">
-                  Technical Languages
+              <div className="text-left">
+                <h3 className="font-display font-bold text-sm sm:text-base text-slate-800 dark:text-white">
+                  Technical
                 </h3>
-                <p className="text-[10px] text-slate-401 text-purple-600/60 dark:text-purple-400/85 font-mono">CODE & SYSTEMS</p>
+                <p className="text-[10px] text-purple-600/60 dark:text-purple-400/85 font-mono">CODE & SYSTEMS</p>
               </div>
             </div>
 
@@ -98,11 +99,11 @@ export default function Skills() {
                   </div>
                   <div className="h-[5px] bg-slate-100 dark:bg-slate-900 rounded-full overflow-hidden">
                     <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.percentage}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, ease: 'easeOut' }}
-                      className="h-full bg-gradient-to-r from-purple-600 to-pink-500 rounded-full"
+                       initial={{ width: 0 }}
+                       whileInView={{ width: `${skill.percentage}%` }}
+                       viewport={{ once: true }}
+                       transition={{ duration: 1, ease: 'easeOut' }}
+                       className="h-full bg-gradient-to-r from-purple-600 to-pink-500 rounded-full"
                     />
                   </div>
                 </div>
@@ -123,14 +124,14 @@ export default function Skills() {
               style={{ transform: 'translateZ(30px)' }}
               className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800"
             >
-              <div className="p-2.5 rounded-xl bg-pink-500/10 text-pink-500">
+              <div className="p-2.5 rounded-xl bg-pink-500/10 text-pink-500 shrink-0">
                 <MonitorPlay className="w-5 h-5 animate-bounce" />
               </div>
-              <div>
-                <h3 className="font-display font-bold text-base text-slate-800 dark:text-white">
-                  Software Productivity
+              <div className="text-left">
+                <h3 className="font-display font-bold text-sm sm:text-base text-slate-800 dark:text-white">
+                  Productivity
                 </h3>
-                <p className="text-[10px] text-pink-600/60 dark:text-pink-400/85 font-mono">UTILITIES & DOCUMENTATION</p>
+                <p className="text-[10px] text-pink-600/60 dark:text-pink-400/85 font-mono">UTILITIES</p>
               </div>
             </div>
 
@@ -170,24 +171,24 @@ export default function Skills() {
           >
             <div 
               style={{ transform: 'translateZ(30px)' }}
-              className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800 animate-pulse"
+              className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800"
             >
-              <div className="p-2.5 rounded-xl bg-blue-500/10 text-blue-505 text-blue-400">
+              <div className="p-2.5 rounded-xl bg-blue-500/10 text-blue-400 shrink-0">
                 <HeartHandshake className="w-5 h-5" />
               </div>
-              <div>
-                <h3 className="font-display font-bold text-base text-slate-800 dark:text-white">
-                  Social & Communication
+              <div className="text-left">
+                <h3 className="font-display font-bold text-sm sm:text-base text-slate-800 dark:text-white">
+                  Social
                 </h3>
-                <p className="text-[10px] text-blue-601 text-blue-600/60 dark:text-blue-400/85 font-mono">LEADERSHIP & COLLABORATION</p>
+                <p className="text-[10px] text-blue-600/60 dark:text-blue-400/85 font-mono">LEADERSHIP</p>
               </div>
             </div>
 
             <div className="space-y-6 flex-1 text-left" style={{ transform: 'translateZ(15px)' }}>
               {SOFT_SKILLS.map((skill) => (
-                <div key={skill.name} className="space-y-2">
+                <div key={skill.name} className="space-y-2 font-display">
                   <div className="flex justify-between items-center text-xs font-semibold">
-                    <span className="text-slate-705 dark:text-slate-300 font-display">
+                    <span className="text-slate-705 dark:text-slate-300">
                       {skill.name}
                     </span>
                     <span className="text-blue-600 dark:text-blue-400 font-mono text-[10px]">
@@ -205,6 +206,40 @@ export default function Skills() {
                   </div>
                 </div>
               ))}
+            </div>
+          </motion.div>
+
+          {/* Interactive Skills 3D Planetary Ellipse Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ delay: 0.3 }}
+            className="card-3d-hover preserve-3d rounded-3xl p-6 bg-white dark:bg-slate-950/80 border border-purple-550/15 dark:border-white/5 shadow-xl flex flex-col justify-between h-full hover:shadow-purple-500/5 transition-all"
+            id="skills-3d-hologram-card"
+          >
+            <div 
+              style={{ transform: 'translateZ(30px)' }}
+              className="text-left"
+            >
+              <span className="px-2 py-0.5 rounded bg-pink-500/10 text-pink-500 text-[9px] font-mono font-bold tracking-widest uppercase">
+                3D Model
+              </span>
+              <h4 className="font-display font-extrabold text-sm text-slate-800 dark:text-white mt-1.5">
+                Skill Orbit Matrix
+              </h4>
+              <p className="text-[11px] text-slate-550 dark:text-slate-400 font-light mt-1">
+                A dynamic 3D simulation mapping key technology stacks and programming frameworks in real-time.
+              </p>
+            </div>
+
+            {/* Simulated interactive orbits */}
+            <div className="flex-1 flex items-center justify-center p-2 relative h-48 md:h-56">
+              <Skills3D />
+            </div>
+
+            <div className="text-center font-mono text-[9px] text-slate-400 dark:text-slate-500 font-medium">
+              [ Interactive 3D Model ]
             </div>
           </motion.div>
         </div>

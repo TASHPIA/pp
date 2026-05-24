@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { BookOpen, Users, Target, Lightbulb, GraduationCap } from 'lucide-react';
+import About3D from './About3D';
 
 export default function About() {
   return (
@@ -60,7 +61,7 @@ export default function About() {
                 className="flex items-center gap-2.5 mb-2"
               >
                 <div className="p-2.5 rounded-2xl bg-gradient-to-tr from-purple-500 to-pink-500 text-white shadow-md shadow-pink-500/10">
-                  <GraduationCap className="w-5 h-5 animate-pulse" />
+                  <GraduationCap className="w-5 h-5" />
                 </div>
                 <h3 className="font-display font-bold text-lg text-slate-800 dark:text-white">
                   Academic & Professional Story
@@ -112,13 +113,13 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Core Interests and Skills Card 1 (Col span 5) */}
+          {/* Core Interests and Skills Card 1 (Col span 5 with integrated 3D Helix) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="md:col-span-5 rounded-3xl p-8 bg-white dark:bg-slate-950 border border-slate-200/50 dark:border-white/5 shadow-md flex flex-col justify-between card-3d-hover preserve-3d"
+            className="md:col-span-5 rounded-3xl p-8 bg-white dark:bg-slate-950 border border-slate-200/50 dark:border-white/5 shadow-md flex flex-col justify-between card-3d-hover preserve-3d overflow-hidden"
             id="about-goals-card"
           >
             <div className="space-y-4 preserve-3d">
@@ -127,7 +128,7 @@ export default function About() {
                 className="flex items-center gap-2.5"
               >
                 <div className="p-2.5 rounded-2xl bg-pink-500/15 text-pink-500">
-                  <Target className="w-5 h-5 animate-pulse" />
+                  <Target className="w-5 h-5" />
                 </div>
                 <h3 className="font-display font-bold text-base text-slate-800 dark:text-white">
                   My Career Roadmap
@@ -137,25 +138,30 @@ export default function About() {
                 style={{ transform: 'translateZ(15px)' }}
                 className="text-slate-600 dark:text-slate-350 text-xs sm:text-sm leading-relaxed font-light text-left"
               >
-                My overarching career goal is to become an expert software engineer guiding the development of robust, secure, and user-centric systems. I aim to bridging the gap between design engineering and software capabilities to contribute productively to modern web technologies, internships, and freelancing.
+                My overarching career goal is to become an expert software engineer guiding the development of robust, secure, and user-centric systems. I aim to bridge design and code capabilities.
               </p>
+            </div>
+
+            {/* Embedded Interactive 3D Helix Structure representation */}
+            <div className="h-32 my-2 relative overflow-hidden flex items-center justify-center z-10">
+              <About3D />
             </div>
 
             <div 
               style={{ transform: 'translateZ(25px)' }}
-              className="space-y-3.5 mt-6 pt-5 border-t border-slate-200/60 dark:border-slate-800 flex flex-col text-left"
+              className="space-y-2 mt-2 pt-3 border-t border-slate-200/60 dark:border-slate-800 flex flex-col text-left"
             >
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-purple-500" />
-                <span className="text-xs text-slate-605 dark:text-slate-300 font-mono font-medium">Continuous learning & adaptability</span>
+              <div className="flex items-center gap-2.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-purple-500 shrink-0" />
+                <span className="text-[11px] text-slate-605 dark:text-slate-300 font-mono font-medium">Continuous learning & adaptability</span>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-pink-500" />
-                <span className="text-xs text-slate-605 dark:text-slate-300 font-mono font-medium">Full-stack javascript environments</span>
+              <div className="flex items-center gap-2.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-pink-500 shrink-0" />
+                <span className="text-[11px] text-slate-605 dark:text-slate-300 font-mono font-medium">Full-stack javascript environments</span>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-blue-500" />
-                <span className="text-xs text-slate-605 dark:text-slate-300 font-mono font-medium">Interactive design implementation</span>
+              <div className="flex items-center gap-2.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
+                <span className="text-[11px] text-slate-605 dark:text-slate-300 font-mono font-medium">Interactive design implementation</span>
               </div>
             </div>
           </motion.div>
@@ -216,7 +222,7 @@ export default function About() {
                 style={{ transform: 'translateZ(30px)' }}
                 className="flex items-center gap-2.5"
               >
-                <div className="p-2.5 rounded-2xl bg-indigo-505 bg-purple-600/10 text-purple-500">
+                <div className="p-2.5 rounded-2xl bg-indigo-550 bg-purple-600/10 text-purple-500">
                   <Lightbulb className="w-5 h-5 animate-bounce" />
                 </div>
                 <h3 className="font-display font-bold text-base text-slate-800 dark:text-white">

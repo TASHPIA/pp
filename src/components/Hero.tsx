@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowDown, Mail, Download, Layers, ShieldCheck, Award, Heart, CheckCircle2, X, Sparkles } from 'lucide-react';
+import InteractiveThreeD from './InteractiveThreeD';
 
 interface HeroProps {
   onContactClick: () => void;
@@ -234,27 +235,32 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
         </div>
 
         {/* Visual Showcase: Avatar, Glowing Orbits & rotating 3D Object (Col of 5) */}
-        <div className="md:col-span-5 flex justify-center relative preserve-3d">
+        <div className="md:col-span-5 flex justify-center relative preserve-3d h-[380px] sm:h-[420px]">
           
+          {/* Interactive 3D Polyhedron & Starfield Cloud */}
+          <div className="absolute inset-0 z-0 flex items-center justify-center scale-110 md:scale-125 z-0 pointer-events-auto">
+            <InteractiveThreeD />
+          </div>
+
           {/* Parallax Orbit background effects */}
           <motion.div 
             animate={{ 
-              x: mousePosition.x * 2, 
-              y: mousePosition.y * 2,
-              rotate: mousePosition.x * 0.5
+              x: mousePosition.x * 1.5, 
+              y: mousePosition.y * 1.5,
+              rotate: mousePosition.x * 0.3
             }}
             transition={{ type: 'spring', damping: 30 }}
-            className="absolute rounded-full border border-purple-500/15 w-[420px] h-[420px] -top-12 -left-12 pointer-events-none animate-orbit-slow"
+            className="absolute rounded-full border border-purple-500/10 w-[380px] h-[380px] pointer-events-none animate-orbit-slow z-1"
           />
 
           <motion.div 
             animate={{ 
-              x: mousePosition.x * -1.5, 
-              y: mousePosition.y * -1.5,
-              rotate: mousePosition.x * -0.8
+              x: mousePosition.x * -1.0, 
+              y: mousePosition.y * -1.0,
+              rotate: mousePosition.x * -0.5
             }}
             transition={{ type: 'spring', damping: 35 }}
-            className="absolute rounded-full border border-pink-500/10 w-[340px] h-[340px] -top-2 -left-2 pointer-events-none animate-orbit-medium"
+            className="absolute rounded-full border border-pink-500/5 w-[310px] h-[310px] pointer-events-none animate-orbit-medium z-1"
           />
 
           {/* Main 3D Card wrapper that tracks mouse cursor perfectly */}
@@ -267,7 +273,7 @@ export default function Hero({ onContactClick, onProjectsClick }: HeroProps) {
               rotateY: mousePosition.x * 0.5
             }}
             transition={{ duration: 0.7, delay: 0.2, type: 'spring', damping: 20 }}
-            className="relative w-80 sm:w-88 h-80 sm:h-88 h-80 select-none group preserve-3d"
+            className="relative w-72 sm:w-80 h-72 sm:h-80 select-none group preserve-3d z-10 m-auto"
           >
             {/* Fancy spinning outer gradient ring */}
             <div className="absolute -inset-4 rounded-full bg-gradient-to-tr from-purple-500 via-pink-500 to-indigo-500 opacity-30 blur-lg group-hover:opacity-50 transition-opacity duration-500" />
